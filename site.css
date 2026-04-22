@@ -748,6 +748,9 @@ body::before {
 .subject-chip.active { color: var(--glow); border-color: var(--border-focus); background: rgba(143,224,240,0.05); }
 .contact__sent { display: flex; flex-direction: column; gap: 14px; padding: 32px 0; }
 .contact__sent .label { color: var(--glow); font-size: 28px; }
+.contact__sent-fallback { color: var(--fg-3); margin-top: 6px; }
+.contact__sent-fallback a { color: var(--fg-2); }
+.contact__sent-fallback a:hover { color: var(--glow); }
 
 /* ---------- footer (horizontal alignment) ---------- */
 .site-footer { border-top: 1px solid var(--border); padding: var(--s-8) 0 var(--s-7); margin-top: var(--s-9); }
