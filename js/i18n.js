@@ -1,0 +1,246 @@
+// i18n dictionary — EN default, ZH simplified, DE
+window.I18N = {
+  en: {
+    nav: { work: "work", about: "about", shop: "shop", contact: "contact" },
+    hero: {
+      lead: "cocolinux",
+      tag_a: "technical artist.",
+      tag_b: "dreamcore,",
+      tag_c: "rendered.",
+      scroll: "scroll",
+    },
+    work: {
+      label: "selected work",
+      view: "view piece",
+      more: "all work",
+      intros: {
+        "snow-after-us": {
+          techLabel: "technology",
+          body: "A conceptual experiment in narrative, surreal, dreamcore gameplay built with World Labs Marble. The player wakes up as an insect and returns to the playground of their childhood — except the playground is buried in snow, torn down, and no one is there anymore.\n\nA quiet piece about anemoia: the ache of remembering a place that, on close inspection, was never really there.",
+          tech: "World generated with World Labs Marble · sound & music by ElevenLabs · game and interactions built in Unity · visual effects and lighting inspired by spark.js, reimplemented in Unity.",
+        },
+        "night-of-deity": {
+          techLabel: "technology",
+          body: "An experiment: what happens if you fold Greek mythology, aurora-style VFX, dreamcore 3D Gaussian Splatting scenes, and the La La Land soundtrack into a single Unity interaction?\n\nBackground music: \"Someone in the Crowd\", from La La Land.\n\nFlying from Korea back to Germany, I was lucky enough to get a polar route. The flight stayed in daylight the whole way, so there was no visible aurora — but the presence of the pole was already there, just outside the window. After landing I procrastinated the idea for days, and finally implemented the first build of the 3DGS-aurora VFX one night. That became the initial version of The Night of Deities.",
+          tech: "Hand-crafted volumetric relighting of 3DGS in Unity · real-time interactive visualization in Unity · 3DGS reconstructions from MLSharp · source imagery from Midjourney.",
+          quotes: [
+            { text: "这个光影这个画面和配乐和理念太蒂了，完全看哭了… 背景既像意式园林又像宇宙群星，配上先贤和众神，真的是人类群星闪耀时的具象化。我还在读高中，打算申请 humanity 或者 visual art 纯文专业 — 老师的作品让我感受到了数字艺术和人文的结合有多震撼。", author: "眠羊，球羊，巨羊 — 小红书" },
+            { text: "像探索真理路上的黑夜。", author: "欲雪willsnow" },
+          ],
+        },
+        "butterfly-dream": {
+          techLabel: "technology",
+          body: "Immersive Gaussian Splatting music-interaction experiment, Vol. 2.\n\nWhile hand-rolling a music-visualizer shader in Unity, a stray frame caught a Monet-garden wash of colour and blur. From that accident, a virtual dream: impressionist hues, a forgotten Thinker, and Zhuangzi's butterfly, all folded into one scene.\n\nImpressionism's soft distance maps neatly onto dreamcore — familiar, yet never quite here. Zhuangzi said all things, at heart, can flow into one another. In this dimension he was, perhaps, the first VR pioneer.",
+          tech: "3DGS · music-reactive VFX shader · Unity · custom splatting renderer.",
+        },
+        "memory": {
+          techLabel: "technology",
+          body: "In the quiet, haunting expanse of a German winter, a liminal, surreal landscape captured through 3D Gaussian Splatting. The piece transforms a real, physical environment into a dreamcore world — familiar and deeply nostalgic, yet fundamentally unmoored from reality.\n\nAs you navigate the frozen cityscape, the boundary between you and the space dissolves. A low-latency voice interaction (Gemini Live API) lets you converse with the environment itself — voice-controlled locomotion, gestures that guide the flight of surreal steampunk insects hovering in the snowy air.\n\nAccompanied by an ethereal score composed with Suno, the work explores the nature of memory: its persistence, its fragility, its quiet beauty. A world suspended in perpetual snow — a reflection of the moments that linger, just beyond reach.",
+          tech: "3DGS captures of a German winter · Gemini Live API for low-latency voice interaction · gesture-guided VFX insects · score composed with Suno · Unity.\n\n(The exhibited version runs a simplified build without a live Gemini connection — pre-recorded AI dialogue accompanies the VFX to ensure smooth exhibition.)",
+        },
+        "ephemeral-biomes": {
+          techLabel: "technology",
+          body: "An early experimental work in immersive dreamcore VFX. By simply opening their palms, the participant can \"conjure\" a variety of surreal creatures — non-existent bionic flowers, steampunk insects, things that never were. Closing the hand triggers a glitter-bloom expansion; opening it again spawns a fresh creature.\n\nThe gesture is borrowed, with love, from the memory sequence in Harry Potter where Severus Snape conjures a magical flower for Lily.",
+          tech: "Concept art co-created with Midjourney · converted to 3D Gaussian Splatting point clouds via Meta's SAM 3D · real-time VFX developed natively in Unity.",
+        },
+        "immersive-asmr": {
+          techLabel: "technology",
+          body: "Built an entire dreamcore world from Gaussian Splats using World Labs Marble, then hand-rolled a suite of 3DGS shader effects in Unity. Hybrid rendering pairs the splats with GLB meshes downloaded from World Labs, combined with Unity's physics system and particle effects to power the ASMR simulation.\n\nRuns in real time on 2D desktop and in immersive VR. A little like eating a poisonous mushroom.",
+          tech: "World Labs Marble scene · custom 3DGS shaders in Unity · hybrid rendering (splats + GLB meshes) · Unity physics & particles · real-time on desktop and VR.",
+        },
+      },
+    },
+    about: {
+      label: "about",
+      p1: "cocolinux is a technical artist and mixed reality researcher based in Hamburg, Germany, working at the intersection of immersive media and cutting-edge rendering technologies. Her artistic practice focuses on bringing the dreamcore aesthetic to spatial computing, utilizing the latest advancements in generative world models and 3D Gaussian Splatting (3DGS). Through her visual effects, she seeks to trigger anemoia — a profound sense of nostalgia for times and spaces that never actually existed. Her dreamcore piece, Snow After Us, was awarded third place at the inaugural World Labs Winter Competition in 2026.",
+      p2: "Beyond her personal artwork, cocolinux bridges the gap between research and practical development. She created the first commercially adopted 3DGS shader and VFX toolkit for Unity. Featuring advanced volumetric relighting, this toolkit currently supports over 200 studios and independent developers worldwide. In academia, her research on radiance field rendering, spatial interactions, and intelligent virtual agents is frequently published at top international venues like TVCG, ISMAR, IEEE VR, and IROS. She also actively contributes to the XR research community, serving on the international program committees for premier conferences, including IEEE VR 2026 and ISMAR 2026.",
+      scholar: "google scholar →",
+    },
+    shop: {
+      label: "dreamcore xr labs",
+      title: "3dgs toolkit for unity.",
+      body: "The first commercially adopted 3D Gaussian Splatting shader and VFX toolkit for Unity. Volumetric relighting, in-engine editing, production-ready.",
+      cta: "visit the shop →",
+      trust: "used by 200+ studios worldwide",
+    },
+    contact: {
+      label: "contact & consultation",
+      title: "get in touch.",
+      body: "For commissions, research collaborations, and toolkit consulting.",
+      name: "name",
+      email: "email",
+      subject: "topic",
+      subject_opts: ["commission", "research collab", "toolkit consulting", "other"],
+      message: "message",
+      placeholder: "tell me about your project…",
+      submit: "send",
+      sent: "thank you — i'll be in touch soon.",
+    },
+    footer: {
+      socials: "elsewhere",
+      copyright: "© 2026 cocolinux · Dreamcore XR Labs · Hamburg",
+    },
+  },
+  zh: {
+    nav: { work: "作品", about: "关于", shop: "商店", contact: "联系" },
+    hero: {
+      lead: "cocolinux",
+      tag_a: "技术美术。",
+      tag_b: "梦核，",
+      tag_c: "被渲染。",
+      scroll: "向下",
+    },
+    work: {
+      label: "精选作品",
+      view: "查看作品",
+      more: "所有作品",
+      intros: {
+        "snow-after-us": {
+          techLabel: "技术",
+          body: "一次关于叙事、超现实与梦核氛围的游戏化实验，基于 World Labs Marble 创作。玩家以昆虫之躯醒来，回到童年的那片操场——只是此时的操场被雪覆盖、被拆除，空无一人。\n\n这是一件关于 anemoia 的作品：仔细想来，你所怀念的那个地方，其实从未真正存在过。",
+          tech: "场景由 World Labs Marble 生成 · 声音与音乐由 ElevenLabs 生成 · 游戏与交互在 Unity 中开发 · 视觉与光照受 spark.js 启发，在 Unity 中重写实现。",
+        },
+        "night-of-deity": {
+          techLabel: "技术",
+          body: "一次实验：如果把古希腊神话、极光视觉特效、梦核氛围的高斯泼溅（3DGS）场景，和《La La Land》的配乐，一起丢进 Unity 里做游戏交互，会长成什么样？\n\n背景音乐：Someone in the Crowd，from La La Land。\n\n从韩国飞回德国的飞机上，幸运地走了极地航线。因为一直在白天飞，所以其实并没有看到极光，但在飞机上已经能感受到极地的气场。落地之后拖延了好几天，今晚终于开始 implement 最初构想的高斯极光视觉效果。于是有了「诸神的夜晚」的第一版。",
+          tech: "在 Unity 里手搓的 3DGS 体积重光照 · Unity 中的实时交互可视化 · 基于 MLSharp 生成的 3DGS · 原始图像由 Midjourney 生成。",
+          quotes: [
+            { text: "这个光影这个画面和配乐和理念太蒂了 完全看哭了 问问老师这是游戏吗还是企划之类的 非常非常想 follow 太漂亮了 背景既像意式园林又像宇宙群星 太太太美了 配上先贤和众神真的是人类群星闪耀时的具象化 我还在读高中打算申请 humanity 或者 visual art 纯文专业 老师的作品真正让我感受到了数字艺术和人文的结合有多震撼。", author: "眠羊，球羊，巨羊 · 小红书" },
+            { text: "像探索真理路上的黑夜。", author: "欲雪 willsnow" },
+          ],
+        },
+        "butterfly-dream": {
+          techLabel: "技术",
+          body: "沉浸式高斯泼溅（Gaussian Splatting）音乐交互实验 Vol.2。\n\n在 Unity 里手搓音乐可视化 Shader 时，意外捕捉到了一抹莫奈花园式的色彩和模糊感。\n\n于是，我尝试把莫奈的印象派色彩、被遗忘的沉思者雕像，和庄子梦到的蝴蝶，一起融入一个虚拟梦境。印象派的若即若离，恰好契合了「梦核（Dreamcore）」那种熟悉却又疏离的超现实感。\n\n庄子说，万物本质皆可交融转化。在这个维度，他或许是初代的 VR 先行者。",
+          tech: "3DGS · 音乐响应视效 Shader · Unity · 自研泼溅渲染管线。",
+        },
+        "memory": {
+          techLabel: "技术",
+          body: "在德国冬日那种安静、带着一丝恍惚的辽阔中，这件作品以 3D 高斯泼溅捕捉了一片临界、超现实的景观，将真实的物理环境转化为一个「梦核」世界——熟悉、充满怀旧感，却又彻底脱离了现实的锚点。\n\n当你在这片冰封、寂静的城市中移动时，你与环境之间的界限逐渐消融。作品通过 Gemini Live API 提供低延迟的语音交互，让你与空间本身进行对话：用声音控制位移，用手势引导盘旋在雪空中的超现实蒸汽朋克昆虫。\n\n伴随着 Suno 创作的空灵配乐，这件作品探讨着记忆的本质——它的延续、脆弱与静谧之美。一个悬浮在永恒大雪中的世界，是那些停留、却又始终在我们触及之外的瞬间的倒影。",
+          tech: "对德国冬日场景进行的 3DGS 捕捉 · 使用 Gemini Live API 实现低延迟语音交互 · 手势驱动的 VFX 昆虫 · 配乐由 Suno 创作 · Unity。\n\n（展览版本为简化版，未接入 Gemini 云服务，使用预录的 AI 对话配合视觉特效，以确保展出过程稳定顺畅。）",
+        },
+        "ephemeral-biomes": {
+          techLabel: "技术",
+          body: "cocolinux 早期在沉浸式梦核视觉特效领域的一项实验性作品。体验者只需张开手掌，即可「召唤」出形态各异的超现实生物——例如现实中未曾存在过的仿生花卉与蒸汽朋克风格的昆虫。当体验者收拢手掌时，会触发一种「闪光绽放与膨胀」的视觉反馈，而再次张开手掌后，便会生成一个全新的超现实生物。\n\n这一手势交互的灵感，源于《哈利·波特》中斯内普为莉莉变出花朵的经典回忆片段。",
+          tech: "超现实生物首先由作者与 Midjourney 协作生成二维概念图 · 随后借助 Meta 的 SAM 3D 模型转化为 3D 高斯泼溅点云 · 最终的实时点云视觉效果由作者在 Unity 引擎中原生开发。",
+        },
+        "immersive-asmr": {
+          techLabel: "技术",
+          body: "我用 World Labs Marble 创造了一个迷幻梦核、基于高斯泼溅的 3D 世界。然后在 Unity 里手搓了不同的 3D 高斯泼溅着色器效果，再用从 World Labs 下载的 GLB mesh 做 hybrid rendering，加上 Unity 的物理系统和粒子效果，做了一个 ASMR 仿真。\n\n可以在 2D 桌面和沉浸式虚拟现实里实时体验。像是吃了毒蘑菇一样。",
+          tech: "World Labs Marble 场景 · 在 Unity 里手搓的 3DGS 着色器 · 混合渲染（点云 + GLB mesh） · Unity 物理与粒子 · 桌面与 VR 实时运行。",
+        },
+      },
+    },
+    about: {
+      label: "关于",
+      p1: "cocolinux 是一位常驻德国汉堡的技术美术与混合现实研究员，主要在沉浸式媒体与前沿渲染技术的交汇处进行探索。她的艺术实践侧重于将梦核美学引入空间计算领域，并结合生成式世界模型与3D高斯泼溅（3DGS）的最新技术进展。通过视觉特效的创作，她希望能触发一种名为「anemoia」的情感共鸣，即对从未真实存在过的时空所产生的怀旧感。2026年，其梦核主题作品《Snow After Us》在首届 World Labs 冬季竞赛中获得了季军。",
+      p2: "在个人创作之外，cocolinux 也致力于将技术研究转化为实际应用。她开发了首个投入商业使用的、适用于 Unity 的 3DGS 着色器与视觉特效工具包。该工具包具备高级体积重光照功能，目前有幸为全球 200 多家工作室和独立开发者提供技术支持。在学术领域，她关于辐射场渲染与交互以及虚拟智能体的研究工作，曾多次发表于 TVCG、ISMAR、IEEE VR 和 IROS 等国际重要学术会议与期刊。此外，她也积极参与学术界的服务工作，在 IEEE VR 2026 和 ISMAR 2026 等相关领域的重要学术会议中担任国际程序委员会委员。",
+      scholar: "Google Scholar →",
+    },
+    shop: {
+      label: "Dreamcore XR Labs",
+      title: "面向 unity 的 3dgs 工具包。",
+      body: "首个投入商业使用的、适用于 Unity 的 3D 高斯泼溅着色器与视觉特效工具包。体积重光照、引擎内编辑、已用于生产管线。",
+      cta: "前往商店 →",
+      trust: "已有 200+ 工作室在使用",
+    },
+    contact: {
+      label: "联系与合作",
+      title: "打个招呼。",
+      body: "委托项目、研究合作、工具包咨询。",
+      name: "姓名",
+      email: "邮箱",
+      subject: "主题",
+      subject_opts: ["委托项目", "研究合作", "工具包咨询", "其他"],
+      message: "内容",
+      placeholder: "请简单介绍一下你的项目…",
+      submit: "发送",
+      sent: "感谢你的来信 — 我会尽快回复。",
+    },
+    footer: {
+      socials: "其他平台",
+      copyright: "© 2026 cocolinux · Dreamcore XR Labs · 汉堡",
+    },
+  },
+  de: {
+    nav: { work: "arbeiten", about: "über", shop: "shop", contact: "kontakt" },
+    hero: {
+      lead: "cocolinux",
+      tag_a: "Technische Künstlerin.",
+      tag_b: "Dreamcore,",
+      tag_c: "gerendert.",
+      scroll: "scrollen",
+    },
+    work: {
+      label: "ausgewählte arbeiten",
+      view: "ansehen",
+      more: "alle arbeiten",
+      intros: {
+        "snow-after-us": {
+          techLabel: "Technologie",
+          body: "Ein konzeptuelles Experiment in narrativem, surrealem Dreamcore-Gameplay, entstanden mit World Labs Marble. Die Spielerin erwacht als Insekt und kehrt zum Spielplatz ihrer Kindheit zurück — nur liegt dieser unter Schnee, ist abgerissen, und niemand ist mehr da.\n\nEin leises Stück über Anemoia: das Sehnen nach einem Ort, der bei genauem Hinsehen nie wirklich existiert hat.",
+          tech: "Welt generiert mit World Labs Marble · Sound & Musik von ElevenLabs · Spiel und Interaktionen in Unity · Visual Effects und Licht inspiriert von spark.js, in Unity reimplementiert.",
+        },
+        "night-of-deity": {
+          techLabel: "Technologie",
+          body: "Ein Experiment: Was passiert, wenn man griechische Mythologie, Aurora-artige VFX, dreamcore-getränkte 3D-Gaussian-Splatting-Szenen und den La-La-Land-Soundtrack in einer Unity-Interaktion zusammenfaltet?\n\nHintergrundmusik: \"Someone in the Crowd\", aus La La Land.\n\nAuf dem Rückflug von Korea nach Deutschland hatte ich das Glück, eine Polarroute zu bekommen. Der Flug blieb die ganze Zeit im Tageslicht — keine sichtbare Aurora — aber die Präsenz des Pols war bereits draußen vor dem Fenster. Nach der Landung habe ich die Idee tagelang aufgeschoben und schließlich an einem Abend die erste Version der 3DGS-Aurora-VFX implementiert. Daraus wurde die erste Version von \"The Night of Deities\".",
+          tech: "Handgefertigtes volumetrisches Relighting von 3DGS in Unity · interaktive Echtzeit-Visualisierung in Unity · 3DGS-Rekonstruktionen via MLSharp · Ausgangsbilder aus Midjourney.",
+          quotes: [
+            { text: "这个光影这个画面和配乐和理念太蒂了 完全看哭了… 背景既像意式园林又像宇宙群星 配上先贤和众神真的是人类群星闪耀时的具象化。", author: "眠羊，球羊，巨羊 · Rednote" },
+            { text: "像探索真理路上的黑夜。", author: "欲雪 willsnow" },
+          ],
+        },
+        "butterfly-dream": {
+          techLabel: "Technologie",
+          body: "Immersives Gaussian-Splatting-Musikinteraktions-Experiment, Vol. 2.\n\nBeim händischen Bau eines Music-Visualizer-Shaders in Unity zeigte ein zufälliger Frame eine Monet-artige Wäsche aus Farbe und Unschärfe. Aus dem Unfall wurde ein virtueller Traum: impressionistische Töne, ein vergessener Denker, und Zhuangzis Schmetterling — alles in einer Szene gefaltet.\n\nDie weiche Distanz des Impressionismus trifft die Dreamcore-Ästhetik genau: vertraut, und doch nie ganz hier. Zhuangzi sagte, alle Dinge könnten im Kern ineinander übergehen. In dieser Dimension war er wohl der erste VR-Pionier.",
+          tech: "3DGS · musikreaktiver VFX-Shader · Unity · eigener Splatting-Renderer.",
+        },
+        "memory": {
+          techLabel: "Technologie",
+          body: "In der stillen, nachhallenden Weite eines deutschen Winters fängt die Arbeit eine liminale, surreale Landschaft mit 3D Gaussian Splatting ein. Eine reale, physische Umgebung wird in eine Dreamcore-Welt verwandelt — vertraut, zutiefst nostalgisch, und zugleich grundlos in der Wirklichkeit verankert.\n\nWährend man die gefrorene Stadtlandschaft durchwandert, löst sich die Grenze zwischen Ich und Raum auf. Über die Gemini Live API wird ein niedriglatentes Sprachinterface möglich — man spricht mit dem Raum selbst: stimmgesteuerte Fortbewegung, Gesten, die den Flug surrealer Steampunk-Insekten durch die verschneite Luft leiten.\n\nBegleitet von einem ätherischen Score, komponiert mit Suno, erforscht das Stück die Natur der Erinnerung — ihre Beständigkeit, ihre Zerbrechlichkeit, ihre stille Schönheit. Eine Welt in ewigem Schnee, ein Echo der Momente, die bleiben — knapp außerhalb unserer Reichweite.",
+          tech: "3DGS-Capture einer deutschen Winterlandschaft · Gemini Live API für niedriglatente Sprachinteraktion · gesten­gesteuerte VFX-Insekten · Score komponiert mit Suno · Unity.\n\n(Die Ausstellungsversion läuft als vereinfachter Build ohne Live-Gemini-Anbindung — vorproduzierte KI-Dialoge begleiten die VFX, um einen reibungslosen Ausstellungsbetrieb zu gewährleisten.)",
+        },
+        "ephemeral-biomes": {
+          techLabel: "Technologie",
+          body: "Eine frühe experimentelle Arbeit in immersiver Dreamcore-VFX. Indem die Besucherin einfach die Handflächen öffnet, lassen sich verschiedenste surreale Kreaturen \"herbeirufen\" — nie existierende bionische Blumen, Steampunk-Insekten, Wesen, die nie waren. Das Schließen der Hand löst eine Glitter-Bloom-Expansion aus; beim nächsten Öffnen erscheint ein neues Wesen.\n\nDie Geste ist — mit Liebe — der Erinnerungsszene aus Harry Potter entliehen, in der Severus Snape für Lily eine magische Blume erscheinen lässt.",
+          tech: "Concept Art gemeinsam mit Midjourney entwickelt · über Metas SAM 3D in 3D-Gaussian-Splatting-Punktwolken überführt · Echtzeit-VFX nativ in Unity entwickelt.",
+        },
+        "immersive-asmr": {
+          techLabel: "Technologie",
+          body: "Mit World Labs Marble habe ich eine psychedelische, dreamcore-hafte 3D-Welt aus Gaussian Splats gebaut. Dann in Unity verschiedene 3DGS-Shader-Effekte von Hand gebaut, die Splats via Hybrid Rendering mit aus World Labs exportierten GLB-Meshes kombiniert und das Ganze mit Unity-Physik und Partikeleffekten zu einer ASMR-Simulation zusammengeführt.\n\nLäuft in Echtzeit auf 2D-Desktop und in immersiver VR. Ein bisschen wie ein giftiger Pilz.",
+          tech: "World-Labs-Marble-Szene · eigene 3DGS-Shader in Unity · Hybrid Rendering (Splats + GLB-Meshes) · Unity-Physik & -Partikel · Echtzeit auf Desktop und VR.",
+        },
+      },
+    },
+    about: {
+      label: "über",
+      p1: "cocolinux ist eine Technische Künstlerin und Mixed-Reality-Forscherin mit Sitz in Hamburg. Ihre Arbeit bewegt sich an der Schnittstelle von immersiven Medien und neuesten Rendering-Technologien. Künstlerisch verbindet sie die Dreamcore-Ästhetik mit Spatial Computing — mithilfe generativer Weltmodelle und 3D Gaussian Splatting (3DGS). Ihre Visual Effects zielen auf Anemoia: eine tiefe Sehnsucht nach Orten und Zeiten, die nie existiert haben. Ihr Werk Snow After Us erhielt 2026 den dritten Platz beim ersten World Labs Winter Competition.",
+      p2: "Neben ihrer künstlerischen Praxis überführt cocolinux Forschung in Produktionspraxis. Sie entwickelte den ersten kommerziell eingesetzten 3DGS-Shader und das dazugehörige VFX-Toolkit für Unity — inklusive volumetrischem Relighting — und unterstützt damit über 200 Studios und unabhängige Entwickler weltweit. In der Forschung publiziert sie zu Radiance-Field-Rendering, räumlicher Interaktion und intelligenten virtuellen Agenten bei Venues wie TVCG, ISMAR, IEEE VR und IROS. Zusätzlich wirkt sie im Programmkomitee führender Konferenzen mit, u. a. IEEE VR 2026 und ISMAR 2026.",
+      scholar: "Google Scholar →",
+    },
+    shop: {
+      label: "Dreamcore XR Labs",
+      title: "3dgs-toolkit für unity.",
+      body: "Der erste kommerziell eingesetzte 3D-Gaussian-Splatting-Shader und VFX-Toolkit für Unity. Volumetrisches Relighting, In-Engine-Editing, produktionsreif.",
+      cta: "zum shop →",
+      trust: "im Einsatz bei 200+ Studios",
+    },
+    contact: {
+      label: "kontakt & beratung",
+      title: "hallo sagen.",
+      body: "Auftragsarbeiten, Forschungs­kooperationen und Toolkit-Beratung.",
+      name: "name",
+      email: "e-mail",
+      subject: "thema",
+      subject_opts: ["auftrag", "forschung", "beratung", "anderes"],
+      message: "nachricht",
+      placeholder: "erzähl mir von deinem projekt…",
+      submit: "senden",
+      sent: "danke — ich melde mich bald.",
+    },
+    footer: {
+      socials: "anderswo",
+      copyright: "© 2026 cocolinux · Dreamcore XR Labs · Hamburg",
+    },
+  },
+};

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cocolinux · Dreamcore XR Labs</title>
+<meta name="description" content="cocolinux — technical artist and mixed-reality researcher based in Hamburg. Dreamcore aesthetics, 3D Gaussian Splatting, and the Dreamcore XR Labs Unity toolkit.">
+<meta property="og:title" content="cocolinux · Dreamcore XR Labs">
+<meta property="og:description" content="Technical artist. Dreamcore, rendered.">
+<meta property="og:image" content="assets/logo.png">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="apple-touch-icon" href="assets/logo.png">
+<link rel="stylesheet" href="site.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+<script src="js/i18n.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel" src="js/Cursor.jsx"></script>
+  <script type="text/babel" src="js/Bioluminescence.jsx"></script>
+  <script type="text/babel" src="js/ParallaxDust.jsx"></script>
+  <script type="text/babel" src="js/PointCloud.jsx"></script>
+  <script type="text/babel" src="js/IdleBloom.jsx"></script>
+  <script type="text/babel" src="js/Header.jsx"></script>
+  <script type="text/babel" src="js/Hero.jsx"></script>
+  <script type="text/babel" src="js/WorkGrid.jsx"></script>
+  <script type="text/babel" src="js/WorkDetail.jsx"></script>
+  <script type="text/babel" src="js/About.jsx"></script>
+  <script type="text/babel" src="js/Shop.jsx"></script>
+  <script type="text/babel" src="js/Contact.jsx"></script>
+  <script type="text/babel" src="js/Footer.jsx"></script>
+  <script type="text/babel" src="js/App.jsx"></script>
+  <script type="text/babel" data-presets="react">
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<window.App />);
+  </script>
+</body>
+</html>
