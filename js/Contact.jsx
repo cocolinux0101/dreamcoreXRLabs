@@ -1,13 +1,21 @@
-// Contact.jsx — opens the visitor's mail client pre-filled via mailto:.
-// Static-hosting-friendly (GitHub Pages / any CDN) — no backend needed.
-// Tradeoff: users without a configured mail client see nothing happen, so we
-// always expose the email address as copy-able text in the "sent" state.
+// Contact.jsx — posts the form to Web3Forms (https://web3forms.com),
+// a free, GitHub-Pages-friendly form endpoint. No backend required.
+//
+// To wire it up:
+//   1. Grab an access key at https://web3forms.com/ (one-click, no account).
+//   2. Replace WEB3FORMS_ACCESS_KEY below with the UUID that arrives by email.
+//   3. In the Web3Forms dashboard, restrict "Allowed Origins" to your
+//      github.io / custom domain so other sites can't abuse the key.
+//
+// If the POST fails (network issue, rate limit, key not set), we surface a
+// mailto: fallback so nobody hits a dead end.
 
-const CONTACT_EMAIL = "cocolinux0101@gmail.com";
+const WEB3FORMS_ACCESS_KEY = "12ebbc83-c795-4947-8ace-e77fbd0a21d5";
+const CONTACT_EMAIL        = "cocolinux0101@gmail.com";
 
 function Contact({ lang }) {
   const t = window.I18N[lang].contact;
-  const [sent, setSent] = React.useState(false);
+  const [status, setStatus] = React.useState("idle"); // idle | sending | sent | error
   const [subj, setSubj] = React.useState(t.subject_opts[0]);
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
@@ -15,14 +23,44 @@ function Contact({ lang }) {
 
   React.useEffect(() => { setSubj(t.subject_opts[0]); }, [lang]);
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
+    if (status === "sending") return;
+    setStatus("sending");
+
+    const payload = {
+      access_key: WEB3FORMS_ACCESS_KEY,
+      subject: `[cocolinux portfolio] ${subj}`,
+      from_name: "cocolinux portfolio",
+      name, email, message,
+      topic: subj,
+      botcheck: "",                // honeypot — bots fill this, humans can't
+    };
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok && data.success) {
+        setStatus("sent");
+      } else {
+        console.warn("Web3Forms error:", data);
+        setStatus("error");
+      }
+    } catch (err) {
+      console.warn("Web3Forms network error:", err);
+      setStatus("error");
+    }
+  };
+
+  const mailtoHref = (() => {
     const subject = `[cocolinux portfolio] ${subj}`;
     const body = `${message}\n\n—\nfrom: ${name}\nreply to: ${email}`;
-    const href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = href;
-    setSent(true);
-  };
+    return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  })();
 
   return (
     <section className="contact section" data-screen-label="Contact">
@@ -32,15 +70,11 @@ function Contact({ lang }) {
           <h2 className="contact__title">{t.title}</h2>
           <p className="muted">{t.body}</p>
         </div>
-        <form className="contact__form" onSubmit={submit}>
-          {sent ? (
+        <form className="contact__form" onSubmit={submit} noValidate>
+          {status === "sent" ? (
             <div className="contact__sent">
               <span className="label">✓</span>
               <p>{t.sent}</p>
-              <p className="caption contact__sent-fallback">
-                if your mail app didn't open, write directly to{" "}
-                <a className="arrow-link" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
-              </p>
             </div>
           ) : (
             <>
@@ -51,6 +85,7 @@ function Contact({ lang }) {
                   name="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
+                  disabled={status === "sending"}
                   required
                 />
               </div>
@@ -62,6 +97,7 @@ function Contact({ lang }) {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  disabled={status === "sending"}
                   required
                 />
               </div>
@@ -72,7 +108,7 @@ function Contact({ lang }) {
                     <span
                       key={o}
                       className={"subject-chip " + (subj === o ? "active" : "")}
-                      onClick={() => setSubj(o)}
+                      onClick={() => status !== "sending" && setSubj(o)}
                     >{o}</span>
                   ))}
                 </div>
@@ -86,10 +122,35 @@ function Contact({ lang }) {
                   placeholder={t.placeholder}
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
+                  disabled={status === "sending"}
                   required
                 />
               </div>
-              <button className="btn btn--primary" type="submit">{t.submit} →</button>
+
+              {/* honeypot — hidden from humans, filled by bots */}
+              <input
+                type="checkbox"
+                name="botcheck"
+                tabIndex="-1"
+                autoComplete="off"
+                style={{ position: "absolute", left: "-9999px" }}
+                aria-hidden="true"
+              />
+
+              {status === "error" && (
+                <p className="caption contact__error">
+                  sending failed. try again, or write directly to{" "}
+                  <a className="arrow-link" href={mailtoHref}>{CONTACT_EMAIL}</a>
+                </p>
+              )}
+
+              <button
+                className="btn btn--primary"
+                type="submit"
+                disabled={status === "sending"}
+              >
+                {status === "sending" ? "sending…" : `${t.submit} →`}
+              </button>
             </>
           )}
         </form>
